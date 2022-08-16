@@ -29,7 +29,7 @@ logfile = 'logfile.txt'
 # To create an account reach: http://marine.copernicus.eu/services-portfolio/register-now/.
 # If already created but forgotten reach: http://marine.copernicus.eu/faq/forgotten-password/?idpage=169
 username_cmems = 'rbani'
-password_cmems = 'Azoull0081'
+password_cmems = ''
   
 # Proxy Configuration
 # Please replace "False" by "True" if you use a proxy to connect to internet and fill in the below variables.

@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul  2 09:52:39 2021
+
+@author: N
+"""
+
+import matplotlib.pyplot as plt
+
+
+area_number = [32,30,29,28,26,24,22,21,20,19,18,12]
+
+fig1,ax1 = plt.subplots()
+for i in area_number:
+    ax1.plot(meanBLT_fml_precond_area['year'],meanBLT_fml_precond_area[str(i)],label=str(i))
+ax1.set_xlabel("year",fontsize=14) 
+ax1.set_ylabel("mean Temp",fontsize=14)  
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+fig1.savefig('/Users/Documents/PostdocUW/figure/Temp_meanBLT_fml_precond_area.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')
+
+fig2,ax2 = plt.subplots()
+for i in area_number:
+    ax2.plot(meanBLT_spwn_area['year'],meanBLT_spwn_area[str(i)],label=str(i))
+ax2.set_xlabel("year",fontsize=14) 
+ax2.set_ylabel("mean Temp",fontsize=14)    
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+fig2.savefig('/Users/Documents/PostdocUW/figure/Temp_Spwn_area.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')
+
+fig21,ax21 = plt.subplots()
+for i in area_number:
+    ax21.plot(maxTLT_spwn_area['year'],maxTLT_spwn_area[str(i)],label=str(i))
+ax21.set_xlabel("year",fontsize=14) 
+ax21.set_ylabel("max Temp",fontsize=14)    
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+fig21.savefig('/Users/Documents/PostdocUW/figure/TLT_Spwn_area.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')
+
+##############################################################################################
+##############################################################################################
+# load VPE for oregon
+VPE =  pd.read_excel('/Users/Documents/PostdocUW/shrimp_data/OR-VPE.xlsx', index_col=0)
+
+fig3,ax3 = plt.subplots()
+ax3.plot(VPE['Larval release year'],VPE['OR VPE calculated'], color="red", marker="o")
+
+ax31=ax3.twinx()      
+ax31.plot(list(range(1980,2011)), meanBLT_fml_precond_OR,color="blue",marker="o",label="mean")
+ax31.plot(list(range(1980,2011)), maxBLT_fml_precond_OR,color="aqua",marker="o",label="max")
+
+# set x-axis label
+ax3.set_xlabel("year",fontsize=14)
+# set y-axis label
+ax3.set_ylabel("VPE",color="red",fontsize=14)
+ax31.set_ylabel("fml precond Temp",color="blue",fontsize=14)
+leg =  plt.legend()
+plt.show()
+fig3.savefig('/Users/Documents/PostdocUW/figure/VPE_BLT_fml_precond.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')
+
+fig4,ax4 = plt.subplots()
+ax4.plot(VPE['Larval release year'],VPE['OR VPE calculated'], color="red", marker="o",label="VPE")
+
+ax41=ax4.twinx()      
+ax41.plot(list(range(1980,2011)), meanBLT_spwn_OR, color="blue",marker="o",label="mean")
+ax41.plot(list(range(1980,2011)), maxBLT_spwn_OR, color="aqua",marker="o",label="max")
+# set x-axis label
+ax4.set_xlabel("year",fontsize=14)
+# set y-axis label
+ax4.set_ylabel("VPE",color="red",fontsize=14)
+ax41.set_ylabel("spwn Temp",color="blue",fontsize=14)
+leg =  plt.legend()
+plt.show()
+fig4.savefig('/Users/Documents/PostdocUW/figure/VPE_spwn_precond.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')
+
+fig5,ax5 = plt.subplots()
+ax5.plot(X_shrimp['year'],X_shrimp['Y'], color="red", marker="o",label="VPE")
+
+ax51=ax5.twinx()      
+ax51.plot(X_shrimp['year'], X_shrimp['meanBLT_fml_precond'], color="aqua",marker="o",label="max")
+# set x-axis label
+ax5.set_xlabel("year",fontsize=14)
+# set y-axis label
+ax5.set_ylabel("VPE",color="red",fontsize=14)
+ax51.set_ylabel("meanBLT_fml_precond ",color="blue",fontsize=14)
+leg =  plt.legend()
+plt.show()
+fig5.savefig('/Users/Documents/PostdocUW/figure/VPE_meanBLT_fml_precond.pdf',
+            format='pdf',
+            dpi=100,
+            bbox_inches='tight')

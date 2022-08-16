@@ -1,0 +1,305 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul  2 10:30:08 2021
+
+@author: N
+"""
+import matplotlib.pyplot as plt
+
+# plotting the TLT per satate or region, larval stage
+fig1 = plt.figure()
+ax = plt.subplot(221)
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_z1_WA'], 'k',label='ZoeaI') 
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_z2_WA'], 'r',label='ZoeaII') 
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_z3_WA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_z4_WA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_z5_WA'], 'y',label='ZoeaV') 
+plt.plot(df_var_WA['date'], df_var_WA['maxTLT_mg_WA'], 'c',label='Megalopea') 
+plt.ylabel('max_TL_Temp')
+ax.set_title('WA', y=0.99, pad=-8)
+plt.ylim(8,18)
+
+ax = plt.subplot(222)
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_z1_OR'], 'k',label='ZoeaI') 
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_z2_OR'], 'r',label='ZoeaII') 
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_z3_OR'], 'b',label='ZoeaIII')  
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_z4_OR'], 'g',label='ZoeaIV') 
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_z5_OR'], 'y',label='ZoeaV') 
+plt.plot(df_var_OR['date'], df_var_OR['maxTLT_mg_OR'], 'c',label='Megalopea') 
+ax.set_title('OR', y=0.99, pad=-8)
+plt.ylim(8,18)
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+ax = plt.subplot(223)
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_z1_NCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_z2_NCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_z3_NCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_z4_NCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_z5_NCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['maxTLT_mg_NCA'], 'c',label='Megalopea') 
+plt.ylabel('max_TL_Temp')
+ax.set_title('North_CA', y=0.99, pad=-8)
+plt.ylim(8,18)
+
+ax = plt.subplot(224)
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_z1_SCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_z2_SCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_z3_SCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_z4_SCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_z5_SCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['maxTLT_mg_SCA'], 'c',label='Megalopea') 
+plt.ylim(8,18)
+ax.set_title('Central_CA', y=0.99, pad=-8)
+
+plt.show()
+fig1.set_size_inches(14,7)
+fig1.savefig('/Users/Documents/PostdocUW/figure/TLT.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+# plotting the LS per satate or region, larval stage
+fig2 = plt.figure()
+ax = plt.subplot(221)
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_z1_WA'], 'k',label='ZoeaI') 
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_z2_WA'], 'r',label='ZoeaII') 
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_z3_WA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_z4_WA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_z5_WA'], 'y',label='ZoeaV') 
+plt.plot(df_var_WA['date'], df_var_WA['meanLST_mg_WA'], 'c',label='Megalopea') 
+plt.ylabel('mean_LST')
+ax.set_title('WA', y=0.99, pad=-8)
+plt.ylim(-0.07,0.07)
+
+ax = plt.subplot(222)
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_z1_OR'], 'k',label='ZoeaI') 
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_z2_OR'], 'r',label='ZoeaII') 
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_z3_OR'], 'b',label='ZoeaIII')  
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_z4_OR'], 'g',label='ZoeaIV') 
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_z5_OR'], 'y',label='ZoeaV') 
+plt.plot(df_var_OR['date'], df_var_OR['meanLST_mg_OR'], 'c',label='Megalopea') 
+ax.set_title('OR', y=0.99, pad=-8)
+plt.ylim(-0.07,0.07)
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+ax = plt.subplot(223)
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_z1_NCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_z2_NCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_z3_NCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_z4_NCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_z5_NCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanLST_mg_NCA'], 'c',label='Megalopea') 
+plt.ylabel('mean_LST')
+ax.set_title('North_CA', y=0.99, pad=-8)
+plt.ylim(-0.07,0.07)
+
+ax = plt.subplot(224)
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_z1_SCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_z2_SCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_z3_SCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_z4_SCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_z5_SCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanLST_mg_SCA'], 'c',label='Megalopea') 
+plt.ylim(-0.07,0.07)
+ax.set_title('Central_CA', y=0.99, pad=-8)
+plt.show()
+fig2.set_size_inches(14,7)
+fig2.savefig('/Users/Documents/PostdocUW/figure/LST.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+# plotting the CS per satate or region, larval stage
+fig3 = plt.figure()
+ax = plt.subplot(221)
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_z1_WA'], 'k',label='ZoeaI') 
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_z2_WA'], 'r',label='ZoeaII') 
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_z3_WA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_z4_WA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_z5_WA'], 'y',label='ZoeaV') 
+plt.plot(df_var_WA['date'], df_var_WA['meanCST_mg_WA'], 'c',label='Megalopea') 
+plt.ylabel('mean_CST')
+ax.set_title('WA', y=0.99, pad=-8)
+plt.ylim(-0.25,0.25)
+
+ax = plt.subplot(222)
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_z1_OR'], 'k',label='ZoeaI') 
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_z2_OR'], 'r',label='ZoeaII') 
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_z3_OR'], 'b',label='ZoeaIII')  
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_z4_OR'], 'g',label='ZoeaIV') 
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_z5_OR'], 'y',label='ZoeaV') 
+plt.plot(df_var_OR['date'], df_var_OR['meanCST_mg_OR'], 'c',label='Megalopea') 
+ax.set_title('OR', y=0.99, pad=-8)
+plt.ylim(-0.25,0.25)
+leg =  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+ax = plt.subplot(223)
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_z1_NCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_z2_NCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_z3_NCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_z4_NCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_z5_NCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_NCA['date'], df_var_NCA['meanCST_mg_NCA'], 'c',label='Megalopea') 
+plt.ylabel('mean_CST')
+ax.set_title('North_CA', y=0.99, pad=-8)
+plt.ylim(-0.25,0.25)
+
+
+ax = plt.subplot(224)
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_z1_SCA'], 'k',label='ZoeaI') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_z2_SCA'], 'r',label='ZoeaII') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_z3_SCA'], 'b',label='ZoeaIII')  
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_z4_SCA'], 'g',label='ZoeaIV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_z5_SCA'], 'y',label='ZoeaV') 
+plt.plot(df_var_SCA['date'], df_var_SCA['meanCST_mg_SCA'], 'c',label='Megalopea') 
+plt.ylim(-0.25,0.25)
+ax.set_title('Central_CA', y=0.99, pad=-8)
+plt.show()
+fig3.set_size_inches(14,7)
+fig3.savefig('/Users/Documents/PostdocUW/figure/CST.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+
+fig5 = plt.figure()
+df_matrix_WA = df_var_WA[['maxTLT_z1_WA','maxTLT_z2_WA','maxTLT_z3_WA','maxTLT_z4_WA','maxTLT_z5_WA','maxTLT_mg_WA']].copy()
+df_matrix_WA = df_var_WA[['maxTLT_z1_WA','maxTLT_z2_WA','maxTLT_z3_WA','maxTLT_z4_WA','maxTLT_z5_WA','maxTLT_mg_WA']].copy()
+axes = scatter_matrix(df_matrix_WA, alpha=0.5, diagonal='kde')
+n = len(df_matrix_WA.columns)
+for x in range(n):
+    for y in range(n):
+        # to get the axis of subplots
+        ax = axes[x, y]
+        # to make x axis name vertical
+        ax.xaxis.label.set_rotation(90)
+        # to make y axis name horizontal
+        ax.yaxis.label.set_rotation(0)
+        # to make sure y axis names are outside the plot area
+        ax.yaxis.labelpad = 25
+plt.tight_layout()
+plt.gcf().subplots_adjust(wspace=0, hspace=0)
+#plt.show()
+fig5.set_size_inches(10,10)
+fig5.savefig(r'/Users/Documents/PostdocUW/figure/coormatrix.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+###############################################################################
+##############################################################################
+# correlation between our variables and response 
+
+import numpy as np
+
+fig6 = plt.figure()
+plt.errorbar(Y_WA['date'],Y_WA['Y'],Y_WA['Y_SD'],color = 'k', linestyle='-', marker='o',lw=3,label='Washington')
+plt.errorbar(Y_OR['date'], Y_OR['Y'],Y_OR['Y_SD'],color = 'r', linestyle='-', marker='o',lw=3,label='Oregon')
+plt.errorbar(Y_NCA['date'], Y_NCA['Y'],Y_NCA['Y_SD'],color = 'b', linestyle='-', marker='o',lw=3,label='Norther California')
+plt.errorbar(Y_SCA['date'], Y_SCA['Y'],Y_SCA['Y_SD'],color = 'g', linestyle='-', marker='o',lw=3,label='Central Califonia')
+leg =  plt.legend(loc='upper right')
+plt.ylabel("Abundance \n (million of lbs)", fontsize=18)
+plt.xlabel("Year", fontsize=18)
+fig.tight_layout(pad=1.0)
+fig6.savefig(r'/Users/Documents/PostdocUW/figure/BM.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+
+import scipy.stats as st
+
+fig7 = plt.figure()
+ax  = plt.subplot(221)
+plt.hist(Y_WA.SB_WA, density=True, bins=30)
+mn, mx = plt.xlim()
+# plt.xlim(mn, mx)
+# kde_xs = np.linspace(mn, mx, 300)
+# kde = st.gaussian_kde(Y_WA.SB_WA)
+# plt.plot(kde_xs, kde.pdf(kde_xs), label="PDF")
+plt.legend(loc="upper left")
+plt.ylabel('Freq')
+plt.xlim(0,25)
+plt.setp(ax.get_xticklabels(), visible=False)
+
+plt.title("OR");
+
+ax = plt.subplot(222)
+plt.hist(Y_OR.SB_OR, density=True, bins=30)
+mn, mx = plt.xlim()
+# plt.xlim(mn, mx)
+# kde_xs = np.linspace(mn, mx, 300)
+# kde = st.gaussian_kde(Y_WA.SB_WA)
+# plt.plot(kde_xs, kde.pdf(kde_xs), label="PDF")
+plt.legend(loc="upper left")
+plt.xlim(0,25)
+plt.setp(ax.get_xticklabels(), visible=False)
+
+plt.title("North CA");
+
+plt.subplot(223)
+plt.hist(Y_NCA.SB_NCA, density=True, bins=30)
+mn, mx = plt.xlim()
+# plt.xlim(mn, mx)
+# kde_xs = np.linspace(mn, mx, 300)
+# kde = st.gaussian_kde(Y_WA.SB_WA)
+# plt.plot(kde_xs, kde.pdf(kde_xs), label="PDF")
+plt.legend(loc="upper left")
+plt.ylabel('Freq')
+plt.xlabel('SB')
+plt.title("Central CA");
+plt.xlim(0,25)
+
+plt.subplot(224)
+plt.hist(Y_SCA.SB_SCA, density=True, bins=30)
+mn, mx = plt.xlim()
+# plt.xlim(mn, mx)
+# kde_xs = np.linspace(mn, mx, 300)
+# kde = st.gaussian_kde(Y_WA.SB_WA)
+# plt.plot(kde_xs, kde.pdf(kde_xs), label="PDF")
+plt.legend(loc="upper left")
+plt.ylabel('Probability')
+plt.xlabel('SB')
+plt.title("WA");
+plt.xlim(0,25)
+
+fig7.set_size_inches(10,10)
+fig7.savefig(r'/Users/Documents/PostdocUW/figure/Freq_SB.pdf',bbox_inches='tight', format='pdf', dpi=1000)
+
+
+
+R_WA = pd.concat([Y_WA.SB_WA,X_WA], axis=1).corr()
+R_OR = pd.concat([Y_OR.SB_OR,X_OR], axis=1).corr()
+R_NCA = pd.concat([Y_NCA.SB_NCA,X_NCA], axis=1).corr()
+R_SCA = pd.concat([Y_SCA.SB_SCA,X_SCA], axis=1).corr()
+
+R_WA_new =R_WA.SB_WA[1:]
+#R_WA_new = R_WA_new.sort_values(ascending=False)
+
+R_OR_new =R_OR.SB_OR[1:]
+#R_OR_new = R_OR_new.sort_values(ascending=False)
+
+R_NCA_new =R_NCA.SB_NCA[1:]
+#R_NCA_new = R_NCA_new.sort_values(ascending=False)
+
+R_SCA_new =R_SCA.SB_SCA[1:]
+#R_SCA_new = R_SCA_new.sort_values(ascending=False)
+
+fig8 = plt.figure()
+
+ax = plt.subplot(221)
+R_WA_new.plot.bar(x='lab', y='val', rot=0)
+
+plt.ylabel('Corr with SB')
+plt.ylim(-0.7,0.4)
+plt.setp(ax.get_xticklabels(), visible=False)
+ax.title.set_text('WA')
+
+ax = plt.subplot(222)
+R_OR_new.plot.bar(x='lab', y='val', rot=0)
+
+plt.ylim(-0.7,0.4)
+plt.setp(ax.get_xticklabels(), visible=False)
+ax.title.set_text('OR')
+
+ax = plt.subplot(223)
+R_NCA_new.plot.bar(x='lab', y='val', rot=0)
+plt.xticks(rotation = 90)
+plt.ylim(-0.7,0.4)
+plt.ylabel('Corr with SB')
+ax.title.set_text('North CA')
+
+ax = plt.subplot(224)
+R_SCA_new.plot.bar(x='lab', y='val', rot=0)
+plt.xticks(rotation = 90)
+plt.ylim(-0.7,0.4)
+ax.title.set_text('Central CA')
+
+fig8.set_size_inches(10,10)
+fig8.savefig(r'/Users/Documents/PostdocUW/figure/coor_SB.pdf',bbox_inches='tight', format='pdf', dpi=1000)
